@@ -1,9 +1,6 @@
 package com.petshop.domain.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,6 +16,7 @@ public class Product {
     private Long id;
     @NotNull
     private String name;
+    @ManyToOne
     private Category category;
     @NotNull
     private double value;
