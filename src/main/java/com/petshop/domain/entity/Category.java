@@ -6,6 +6,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 
@@ -18,6 +20,8 @@ public class Category {
     private Long id;
     private Boolean active;
     private String name;
+    @CreationTimestamp
     private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
+    @UpdateTimestamp
+    private LocalDateTime updatedAt; //usar anotacao @CreationTimestamp e @UpdateTimestamp
 }

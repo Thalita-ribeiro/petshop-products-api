@@ -2,6 +2,7 @@ package com.petshop.api.controller;
 
 import com.petshop.api.dto.ProductDTO;
 import com.petshop.domain.service.ProductService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,8 +19,8 @@ public class ProductController {
     private ProductService productService;
 
     @PostMapping
-    public ResponseEntity<ProductDTO> createProduct(@RequestBody ProductDTO productDTO) {
-        ProductDTO createdProduct = productService.saveProduct(productDTO);
-        return new ResponseEntity<>(createdProduct, HttpStatus.CREATED);
+    public ResponseEntity<Void> createProduct(@Valid @RequestBody ProductDTO productDTO) {
+        productService.saveProduct(productDTO);
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 }

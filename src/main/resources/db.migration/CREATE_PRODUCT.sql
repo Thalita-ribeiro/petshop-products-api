@@ -3,7 +3,7 @@ CREATE TABLE Product (
     id BIGINT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     categoryId BIGINT,
-    value DOUBLE PRECISION NOT NULL,
+    value NUMERIC NOT NULL,
     quantity INT NOT NULL,
     createdAt TIMESTAMP,
     updatedAt TIMESTAMP,
